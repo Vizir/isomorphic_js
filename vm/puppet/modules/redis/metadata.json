@@ -1,0 +1,31 @@
+{
+  "name": "fsalum-redis",
+  "version": "0.0.6",
+  "source": "git://github.com/fsalum/puppet-redis.git",
+  "author": "Felipe Salum",
+  "license": "Apache License, Version 2.0",
+  "summary": "Puppet module for Redis Server",
+  "description": "Module to install and configure a Redis server",
+  "project_page": "https://github.com/fsalum/puppet-redis",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "CHANGELOG": "32b928a1e47198dc2083680b01d123da",
+    "Gemfile": "7c7684e8c8d675f1061e40a3e1d9236d",
+    "Gemfile.lock": "183961a8885783a5f617da58b8d3b8d1",
+    "Modulefile": "27a715c1b6653599c64895e7841fce60",
+    "README.md": "8834c60017afceea8138775f4e991133",
+    "Rakefile": "25325f7a133aff637f3bea5e272bce74",
+    "manifests/init.pp": "5d1cca21dfc1aac28ac563d6b9053be9",
+    "manifests/params.pp": "6adbdff17035fd34e7ac59b1d1569afb",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "templates/redis.debian.conf.erb": "17ecff45fa42a2397ac061532b764092",
+    "templates/redis.logrotate.erb": "c1d0b11eeb8252e6be3f3e0cfe269414",
+    "templates/redis.rhel.conf.erb": "b5088bee6393dd7b1073de6755d6d02c",
+    "tests/init.pp": "2193e95ff8e32896eeb020edb87671d4"
+  }
+}

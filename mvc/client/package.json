@@ -1,0 +1,16 @@
+{
+  "name": "cliente_prototipo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test.sh"
+  },
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "mocha": "latest",
+    "sinon": "latest",
+    "expect.js": "latest",
+    "mocha-phantomjs": "latest"
+  }
+}

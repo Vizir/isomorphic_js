@@ -1,0 +1,28 @@
+@html.extend('/layout/application', function(model){
+  
+  @html.block('content', function(model){
+      <div ng-controller="ClienteController">
+        
+        <p> Oi {{name}}! Estamos começando seu cadastro! </p>
+        <form ng-submit="submitForm()">
+          
+          Nome: <input type="text" ng-model="name" size="30" placeholder="Entre com seu nome"/>
+          <p>{{ errorFor('name') }}</p><br/>
+
+          Email: <input type="text" ng-model="email" size="30" placeholder="Entre com seu email"/>
+          <p>{{ errorFor('email') }}</p><br/>
+
+          <input class="btn-primary" type="submit" value="Enviar"/><div style="font-size: 33px" ng-show="errors.length == 0">✌</div>
+        </form>
+        
+      </div>
+
+      <hr/>
+  })
+
+  @html.append('scripts', function(model){ 
+    <script src="/script/app.js"></script>
+  })
+
+})
+

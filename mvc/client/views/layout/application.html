@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="app" ng-app class="app">
+  <head>
+    @html.block('title', function(model){
+      <title>@(model.title || 'Poc Vizir - Client Server w/ VanilaJS')</title>
+    })
+    @html.block('head', function(model){
+      <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    })
+
+  </head>
+  <body @html.block('bodyTag') >
+    
+
+    @html.block('header')
+    @html.block('content')
+    @html.block('footer')
+    
+    <!--[if lte IE 8]>
+      <script src="/scripts/json3.min.js"></script>
+    <! [endif] -->
+    <!--[if lt IE 9]>
+      <script>
+      document.createElement('header');
+      document.createElement('nav');
+      document.createElement('section');
+      document.createElement('article');
+      document.createElement('aside');
+      document.createElement('footer');
+      document.createElement('hgroup');
+      </script>
+      <script src="/scripts/respond.min.js"></script>
+    <![endif]-->
+    <!--[if lt IEe 9]>
+      <style>
+        .show-ie { display: inline-block !important; }
+        .hide-ie { display: none !important; }
+      </style>
+    <! [endif] -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+
+    @html.block('scripts')
+    
+  </body>
+</html>

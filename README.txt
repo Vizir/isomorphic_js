@@ -90,6 +90,7 @@ Instalação e Uso
     vagrant up
     vagrant ssh
     cd /vagrant
+    ./setup.sh
     ./start.sh
 
 

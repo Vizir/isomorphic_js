@@ -26,6 +26,6 @@
 
 
 
-/tmp
+/tmp/cliente.dadosBasicos.db.txt
 .vagrant/
 .DS_Store

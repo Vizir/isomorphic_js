@@ -1,6 +1,9 @@
 // ------------------------
 // Domain Entity - http://dddcommunity.org/resources/ddd_terms/
+// Data Mapper + Active Record - http://russellscottwalker.blogspot.com.br/2013/10/active-record-vs-data-mapper.html
 // ------------------------
+
+// Deve ser chamado apenas pelo server-side
 
 var $ = require('../util/OO')
 var ClienteCommon = require('./cliente')

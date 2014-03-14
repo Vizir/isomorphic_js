@@ -1,6 +1,8 @@
 // ------------------------
 // Domain Entity - http://dddcommunity.org/resources/ddd_terms/
+// Data Mapper + Active Record - http://russellscottwalker.blogspot.com.br/2013/10/active-record-vs-data-mapper.html
 // ------------------------
+
 
 var EMail = require('./email')
 
@@ -41,6 +43,10 @@ var Cliente = (function() {
       return callback("Dados do cliente não está em um estado válido para ser salvos", this); 
 
     this.clienteRepository.salvaDadosBasicos(this, callback);
+  };
+
+  Cliente.prototype.list = function(query, callback) {
+    this.clienteRepository.list(query, callback);
   };
 
   return Cliente;

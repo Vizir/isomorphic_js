@@ -1,5 +1,5 @@
 // ------------------------
-// Refactor to value Object: http://martinfowler.com/bliki/ValueObject.html
+// TODO: Refactor to value Object: http://martinfowler.com/bliki/ValueObject.html
 // ------------------------
 
 var addrs = require("email-addresses")

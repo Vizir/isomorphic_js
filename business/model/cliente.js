@@ -40,7 +40,7 @@ var Cliente = (function() {
 
   Cliente.prototype.save = function(callback) {
     if (this.validate() == false) 
-      return callback("Dados do cliente não está em um estado válido para ser salvos", this); 
+      return callback({model: "Dados do cliente não está em um estado válido para ser salvos"}, this); 
 
     this.clienteRepository.salvaDadosBasicos(this, callback);
   };

@@ -7,17 +7,25 @@
         <form ng-submit="submitForm()">
           
           Nome: <input type="text" ng-model="name" size="30" placeholder="Entre com seu nome"/>
-          <p>{{ errorFor('name') }}</p><br/>
+          <p class="errorFor">{{ errorFor('name') }}</p><br/>
 
           Email: <input type="text" ng-model="email" size="30" placeholder="Entre com seu email"/>
-          <p>{{ errorFor('email') }}</p><br/>
+          <p class="errorFor">{{ errorFor('email') }}</p><br/>
 
-          <input class="btn-primary" type="submit" value="Enviar"/><div style="font-size: 33px" ng-show="errors.length == 0">✌</div>
+          <input class="btn-primary" type="submit" value="Enviar"/>
+          <div style="font-size: 33px" ng-show="errors.length == 0">✌</div>
+          <div class="infraError" ng-show="infraError">☹ Algo errado aconteceu. Tente novamente.</div>
         </form>
+
+        <div class="listagem">
+          <div class="cliente" ng-repeat="cliente in clientes">
+            <p>Nome: {{cliente.name}} </p>
+            <p>Email: {{cliente.email}} </p>
+            <hr/>
+          </div>
+        </div>
         
       </div>
-
-      <hr/>
   })
 
   @html.append('scripts', function(model){ 

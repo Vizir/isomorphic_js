@@ -1,0 +1,8 @@
+body {
+  font-family: monospace;
+}
+
+.errorFor {
+  color: red;
+  display: inline-block;
+}

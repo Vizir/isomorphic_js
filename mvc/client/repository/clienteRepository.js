@@ -9,26 +9,38 @@ ClienteRepository = (function() {
   function ClienteRepository(args) {
     this.http = args.http;
   }
-  
-  ClienteRepository.prototype.post = function(data, url, successCallback, errorCallback) {
+
+  ClienteRepository.prototype.httpRequest = function(data, url, method, successCallback, errorCallback) {
 
     this.http({
       url: url,
-      method: 'POST',
+      method: method,
       data: data
     })
     .success(function(data, status, headers, config){
-      successCallback(status, data);
+      successCallback(null, data);
     })
     .error(function(data, status, headers, config){
-      errorCallback(status, data);
+      errorCallback({infra: status}, data);
       return;
     });
 
   }
 
+  ClienteRepository.prototype.get = function(data, url, successCallback, errorCallback) {
+    this.httpRequest(data, url, 'GET', successCallback, errorCallback);
+  }
+  
+  ClienteRepository.prototype.post = function(data, url, successCallback, errorCallback) {
+    this.httpRequest(data, url, 'POST', successCallback, errorCallback);
+  }
+
   ClienteRepository.prototype.salvaDadosBasicos = function(dadosBasicos, callback) {
     this.post(dadosBasicos, '/clientes', callback, callback);
+  }
+
+  ClienteRepository.prototype.list = function(query, callback) {
+    this.get(query, '/clientes/list', callback, callback);
   }
 
   return ClienteRepository;

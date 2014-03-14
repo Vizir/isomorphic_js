@@ -73,8 +73,8 @@ describe('Clientes:', function() {
       };
 
       //When
-      var salvarCliente = new SalvarCliente();
-      salvarCliente.dadosBasicos(formDados, clienteRepository, salvarClienteCB);
+      var salvarCliente = new SalvarCliente({clienteRepository: clienteRepository});
+      salvarCliente.dadosBasicos(formDados, salvarClienteCB);
 
       function salvarClienteCB(err, cliente) {
         //Then
@@ -93,8 +93,8 @@ describe('Clientes:', function() {
       var formDados = { };
 
       //When
-      var salvarCliente = new SalvarCliente();
-      salvarCliente.dadosBasicos(formDados, clienteRepository, salvarClienteCB);
+      var salvarCliente = new SalvarCliente({clienteRepository: clienteRepository});
+      salvarCliente.dadosBasicos(formDados, salvarClienteCB);
 
       function salvarClienteCB(err, cliente) {
         
@@ -117,8 +117,8 @@ describe('Clientes:', function() {
       };
 
       //When
-      var salvarCliente = new SalvarCliente();
-      salvarCliente.dadosBasicos(formDados, clienteRepository, salvarClienteCB);
+      var salvarCliente = new SalvarCliente({clienteRepository: clienteRepository});
+      salvarCliente.dadosBasicos(formDados, salvarClienteCB);
 
       function salvarClienteCB(err, cliente) {
         //Then
@@ -139,8 +139,8 @@ describe('Clientes:', function() {
       };
 
       //When
-      var salvarCliente = new SalvarCliente();
-      salvarCliente.dadosBasicos(formDados, clienteRepository, salvarClienteCB);
+      var salvarCliente = new SalvarCliente({clienteRepository: clienteRepository});
+      salvarCliente.dadosBasicos(formDados, salvarClienteCB);
 
       function salvarClienteCB(err, cliente) {
         
@@ -166,8 +166,8 @@ describe('Clientes:', function() {
       };
 
       //When
-      var salvarCliente = new SalvarCliente({ cliente: Cliente});
-      salvarCliente.dadosBasicos(formDados, clienteRepository, salvarClienteCB);
+      var salvarCliente = new SalvarCliente({clienteRepository: clienteRepository, cliente: Cliente});
+      salvarCliente.dadosBasicos(formDados, salvarClienteCB);
 
       function salvarClienteCB(err, cliente) {
         

@@ -7,10 +7,12 @@
     "test": "./test.sh"
   },
   "license": "BSD-2-Clause",
+  "dependencies": {
+    "email-addresses": "latest"
+    },
   "devDependencies": {
     "mocha": "latest",
     "expect.js": "latest",
-    "pretty-error": "latest",
-    "email-addresses": "latest"
+    "pretty-error": "latest"
   }
 }

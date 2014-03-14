@@ -10,7 +10,7 @@ exports.apply = function (app) {
 
   app.get('/clientes', clienteController.index);
 
-  app.get('/clientes/1234', clienteController.show);
+  app.get('/clientes/list', clienteController.list);
 
   app.post('/clientes', clienteController.new);
 

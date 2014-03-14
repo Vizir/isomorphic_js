@@ -15,14 +15,20 @@ ClienteRepository = (function() {
 
     var data = {name: dadosBasicos.name, email: dadosBasicos.email};
 
+    // -- Memoria -- 
     global.memoryDataStorage.push(data);
+    console.log("-- Memory Data Storage -- ", global.memoryDataStorage);
 
-    console.log("-- DATA -- ", global.memoryDataStorage);
-
+    // -- Arquivo -- 
     var fs = require('fs');
     fs.writeFile("/vagrant/tmp/cliente.dadosBasicos.db.txt", JSON.stringify(data));
-    callback(null, data);
+    callback(null, dadosBasicos);
 
+  };
+
+  ClienteRepository.prototype.list = function(query, callback) {
+
+    callback(null, global.memoryDataStorage);
 
   };
 

@@ -6,3 +6,9 @@ body {
   color: red;
   display: inline-block;
 }
+
+.infraError {
+  color: red;
+  display: inline-block;
+  font-size: 33px;
+}

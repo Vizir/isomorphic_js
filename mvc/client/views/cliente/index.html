@@ -2,6 +2,7 @@
   
   @html.block('content', function(model){
       <div ng-controller="ClienteController">
+        <div class="infraError" ng-show="infraError">☹ Algo errado aconteceu. Tente novamente.</div>
         
         <p> Oi {{name}}! Estamos começando seu cadastro! </p>
         <form ng-submit="submitForm()">
@@ -14,9 +15,9 @@
 
           <input class="btn-primary" type="submit" value="Enviar"/>
           <div style="font-size: 33px" ng-show="errors.length == 0">✌</div>
-          <div class="infraError" ng-show="infraError">☹ Algo errado aconteceu. Tente novamente.</div>
+          
         </form>
-
+         <hr/>
         <div class="listagem">
           <div class="cliente" ng-repeat="cliente in clientes">
             <p>Nome: {{cliente.name}} </p>

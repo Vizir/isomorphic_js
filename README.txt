@@ -4,8 +4,11 @@ POC
 - Criar uma modelagem em camadas
 - Criar uma modelagem com entidades menores
 - Reutilização de cógido entre o client e o server
-- Fatiar o cadastro em pequenos pedaços, com persistência independênte
+- Restrição de código apenas para o server
+- Menor quantidade de dependências (lib, modules, frameworks) possívels 
 
+Visão Geral
+-----------
 
         Usuario
             +
@@ -26,21 +29,72 @@ POC
                     +----+------------------------+
 
 
-Estrutura de diretórios
-
-                         +------------------+----------------+
-                         |    MVC (Infra)   |    BUSINESS    |
-     +-------------------|------------------|----------------|
-     |     CLIENT        |        X         |                |
-     +-------------------|------------------|----------------|
-     |     SERVER        |        X         |       X        |
-     +-------------------|------------------|----------------|
-     
+Browser e Server = Infraestrutura. 
 
 
-MVC = Infraestrutura
+Sequência Geral:
+----------------
 
-Business = Modelagem do negócio em classes, sem influencia de infraestrutura
+B                                    +---------------+  +----------------+
+U                                    |               |  |                |
+S                                    |  Use Case     |  |  Models        |
+I                                    |               |  |                |
+                                     +---------------+  +----------------+
+     +------------------------------------------------------------------------------------------>
+I      +-----------+  +-------------+                                         +----------------+
+N      |           |  |             |                                         |                |
+F      |  View     |  |  Controller |                                         |  Repository    |
+R      |           |  |             |                                         |                |
+A      +-----------+  +-------------+                                         +----------------+
 
 
+        
+Sequência Client:
+-----------------
 
+B                                    +---------------+  +----------------+
+U                                    |               |  |                |
+S                                    |  Use Case     |  |  Models        |
+I                                    |               |  |                |
+                                     +---------------+  +----------------+
+     +------------------------------------------------------------------------------------------>
+I      +-----------+  +-------------+                                         +----------------+
+N      |           |  |             |                                         |                |
+F      |  Angular  |  |  Angular    |                                         |   Repository   |
+R      |  Template |  |  Controller |                                         | (Ajax / $HTTP) |
+A      +-----------+  +-------------+                                         +----------------+
+   
+
+
+Sequência Server:
+-----------------
+
+B                                    +---------------+  +----------------------+  
+U                                    |               |  |                      |
+S                                    |  Use Case     |  |  Models              |
+I                                    |               |  | (alguns com código   |
+N                                    |               |  |  apenas para server) |
+                                     +---------------+  +----------------------+
+     +------------------------------------------------------------------------------------------>
+I      +-----------+  +-------------+                                         +----------------+
+N      |  Express  |  |             |                                         |                |
+F      |  Routes / |  |  Express    |                                         |   Repository   |
+R      |  JSon     |  |  Controller |                                         | (node fs + mem)|
+A      +-----------+  +-------------+                                         +----------------+
+   
+
+
+Instalação e Uso
+----------
+
+    vagrant up
+    vagrant ssh
+    cd /vagrant
+    ./start.sh
+
+
+Teste
+-----
+
+    cd /vagrant/business/
+    ./test.sh
